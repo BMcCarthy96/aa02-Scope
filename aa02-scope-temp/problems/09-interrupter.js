@@ -16,13 +16,20 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 ***********************************************************************/
 
-// Your code here 
+const interrupter = (interruptingWord) => {
+    let newSentence = "";
+
+    return function () {
+        newSentence += interruptingWord;
+        return newSentence;
+    };
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = interrupter;
+    module.exports = interrupter;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

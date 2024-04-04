@@ -15,22 +15,20 @@ hidden2(); // returns 1
 
 ***********************************************************************/
 
-const hiddenCounter() {
+const hiddenCounter = () => {
     let count = 0;
-    
-  return function(){
-    count+=1
-    return count
 
-  }
-}
-
+    return function () {
+        count += 1;
+        return count;
+    };
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = hiddenCounter;
+    module.exports = hiddenCounter;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

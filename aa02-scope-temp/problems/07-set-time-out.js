@@ -18,15 +18,15 @@ funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
 
 ***********************************************************************/
 
-funcTimer(time, func) {
-  return
+function funcTimer(time, func) {
+    setTimeout(time, func);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = funcTimer;
+    module.exports = funcTimer;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }
