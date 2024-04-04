@@ -17,13 +17,20 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
 
-// Your code here 
+const sandwichMaker = () => {
+    let ingredients = "tomato";
+
+    return function (ingredient) {
+        ingredients += " and " + ingredient;
+        return "One sandwich with " + ingredients;
+    };
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = sandwichMaker;
+    module.exports = sandwichMaker;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

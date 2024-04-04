@@ -18,12 +18,19 @@ console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 
 ***********************************************************************/
 
-// Your code here 
+const arrowMyMap = (array, cb) => {
+    let newArray = [];
+    for (let element of array) {
+        let el = cb(element);
+        newArray.push(el);
+    }
+    return newArray;
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = arrowMyMap;
+    module.exports = arrowMyMap;
 } catch (e) {
-  module.exports = null;
+    module.exports = null;
 }
