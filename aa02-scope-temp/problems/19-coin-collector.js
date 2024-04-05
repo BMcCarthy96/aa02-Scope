@@ -25,13 +25,30 @@ Example 3:
 
 ***********************************************************************/
 
-// Your code here 
+function coinCollector(numCoins) {
+    let coins = [];
+
+    // Return a function that accepts a single coin and collects it
+    return function (coin) {
+        // Collect the coin by pushing it to the coins array
+        coins.push(coin);
+
+        // Check if we have collected enough coins
+        if (coins.length === numCoins) {
+            // Return the array of collected coins
+            return coins;
+        } else {
+            // Return a new function to continue collecting coins
+            return coinCollector(numCoins);
+        }
+    };
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = coinCollector;
+    module.exports = coinCollector;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

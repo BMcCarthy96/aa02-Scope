@@ -18,13 +18,18 @@ multiplyByFive(5); // returns 25
 
 ***********************************************************************/
 
-// Your code here 
+function dynamicMultiply(num) {
+    // Return a function that accepts a number x and multiplies it by num
+    return function (x) {
+        return num * x;
+    };
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = dynamicMultiply;
+    module.exports = dynamicMultiply;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

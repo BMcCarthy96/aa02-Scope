@@ -15,13 +15,22 @@ console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 
 *******************************************************************************/
 
-// Your code here 
+function plannedIntersect(firstArr) {
+    // Return a function that accepts a second array (secondArr)
+    return function (secondArr) {
+        // Filter elements from firstArr that are also present in secondArr
+        const intersection = firstArr.filter((item) =>
+            secondArr.includes(item)
+        );
+        return intersection;
+    };
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 
 try {
-  module.exports = plannedIntersect;
+    module.exports = plannedIntersect;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

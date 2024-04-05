@@ -43,13 +43,46 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   be useful
 ***********************************************************************/
 
-// Your code here 
+function curriedSum(numArgs) {
+    // Validate numArgs input
+    if (!Number.isInteger(numArgs) || numArgs <= 0) {
+        throw new Error(
+            "Invalid input: numArgs must be a positive integer greater than 0"
+        );
+    }
+
+    let numbers = [];
+
+    function _curriedSum(num) {
+        // Validate num input
+        if (!Number.isInteger(num) || num <= 0) {
+            throw new Error(
+                "Invalid input: num must be a positive integer greater than 0"
+            );
+        }
+
+        // Collect the number
+        numbers.push(num);
+
+        // If we have collected enough numbers, calculate the sum
+        if (numbers.length === numArgs) {
+            const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+            return sum;
+        } else {
+            // Return _curriedSum to continue collecting numbers
+            return _curriedSum;
+        }
+    }
+
+    // Return the inner function _curriedSum
+    return _curriedSum;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = curriedSum;
+    module.exports = curriedSum;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

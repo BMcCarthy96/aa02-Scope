@@ -22,12 +22,33 @@ console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
 
-// Your code here 
+function smoothieMachine(...initialIngredients) {
+    // Return a function that accepts any number of additional ingredients and a function
+    return function (...newIngredients) {
+        // Concatenate all ingredients (initial and new) into a single array
+        const allIngredients = [...initialIngredients, ...newIngredients];
+
+        // Create a formatted string with all ingredients
+        const ingredientString = allIngredients.join(" and ");
+
+        // Check if a function is provided as the last argument
+        const lastArg = allIngredients[allIngredients.length - 1];
+        const hasFunction = typeof lastArg === "function";
+
+        // If a function is provided, call it with the concatenated ingredients
+        if (hasFunction) {
+            return lastArg(ingredientString);
+        } else {
+            // Otherwise, return the final string describing the smoothie
+            return `I'm having a smoothie with ${ingredientString}`;
+        }
+    };
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
-  module.exports = smoothieMachine;
+    module.exports = smoothieMachine;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

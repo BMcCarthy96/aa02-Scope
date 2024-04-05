@@ -12,13 +12,20 @@ let result3 = arrowReverseString("potato"); // returns "otatop"
 
 ***********************************************************************/
 
-// Your code here 
+const arrowReverseString = (string) => {
+    let reversed = [];
+    for (let i = string.length - 1; i >= 0; i--) {
+        let letter = string[i];
+        reversed.push(letter);
+    }
+    return reversed.join("");
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 
 try {
-  module.exports = arrowReverseString;
+    module.exports = arrowReverseString;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

@@ -15,13 +15,20 @@ console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 
 ***********************************************************************/
 
-// Your code here 
+function coupon(discount) {
+    // Return a function that accepts an array of prices and applies the discount
+    return function (prices) {
+        // Apply the discount to each price in the array using map
+        const discountedPrices = prices.map((price) => price * (1 - discount));
+        return discountedPrices;
+    };
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = coupon;
+    module.exports = coupon;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

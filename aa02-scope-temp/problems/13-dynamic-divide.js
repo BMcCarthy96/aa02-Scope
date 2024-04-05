@@ -18,13 +18,18 @@ divideByFive(50); // returns 10
 
 ***********************************************************************/
 
-// Your code here 
+function dynamicDivide(divisor) {
+    // Return a new function that takes a number argument and divides it by the divisor
+    return function (num) {
+        return num / divisor;
+    };
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = dynamicDivide;
+    module.exports = dynamicDivide;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }

@@ -13,13 +13,32 @@ function returned by recVolume should continue to return the original volume.
 
 ***********************************************************************/
 
-// Your code here 
+function recVolume(height) {
+    let width = null;
+    let length = null;
+    let volume = null;
+
+    return function (dimension) {
+        if (width === null) {
+            // Collect the width
+            width = dimension;
+        } else if (length === null) {
+            // Collect the length
+            length = dimension;
+            // Calculate the volume
+            volume = height * width * length;
+        }
+
+        // Return the calculated volume once all dimensions are collected
+        return volume;
+    };
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = recVolume;
+    module.exports = recVolume;
 } catch (e) {
-  // catch the ref err
-  module.exports = null;
+    // catch the ref err
+    module.exports = null;
 }
